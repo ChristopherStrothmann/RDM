@@ -4,6 +4,9 @@
 # RDM – Rearranged dependence measures
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The R-Package RDM (rearranged dependence measures) computes the directed
@@ -64,29 +67,29 @@ plot(X, xlab="X", ylab="f(X)")
 #Computes R_mu(X, Y) using Spearman's rho as the underlying measure 
 #and a fixed bandwidth 500^(0.5) of the underlying copula estimator
 rdm(X, method="spearman", bandwidth_method="fixed", bandwidth_parameter = 0.5)
-#> [1] 0.9783922
+#> [1] 0.9799068
 
 #Comparison to the Spearman's rho
 cor(X[, 1], X[, 2], method="spearman")
-#> [1] -0.411854
+#> [1] -0.3953097
 
 #Computes R_mu(X, Y) using all implemented underlying measures
 results <- rdm(X, method="all", bandwidth_method="fixed", bandwidth_parameter = 0.5)
 #Value for Spearman's rho
 results$spearman
-#> [1] 0.9783922
+#> [1] 0.9799068
 #Value for Kendall's tau
 results$kendall
-#> [1] 0.8625053
+#> [1] 0.8661791
 #Value for Blum-Kiefer-Rosenblatt R (or Schweizer-Wolff sigma_2)
 results$bkr
-#> [1] 0.9735013
+#> [1] 0.9767718
 #Value for Dette-Siburg-Stoimenov r (or Chatterjee's xi)
 results$dss
-#> [1] 0.8186762
+#> [1] 0.8184535
 #Value for Trutschnig's zeta_1
 results$zeta1
-#> [1] 0.9011154
+#> [1] 0.9050427
 ```
 
 Please note that the choice of bandwidth $s \in (0, 0.5)$ is crucial for
@@ -106,7 +109,7 @@ X <- cbind(x1, 0.5*sin(4*pi*x1)+0.5)
 
 #Use a cross-validation principle to determine appropriate bandwidth choices
 rdm(X, method="spearman", bandwidth_method="cv", bandwidth_parameter = c(0.25, 0.5))
-#> [1] 0.9801719
+#> [1] 0.9729551
 ```
 
 ## References

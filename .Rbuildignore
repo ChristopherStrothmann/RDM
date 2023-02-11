@@ -3,3 +3,4 @@
 ^README\.Rmd$
 references.bib
 ^LICENSE\.md$
+^\.github$

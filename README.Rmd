@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
+[![R-CMD-check](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml)
+
 <!-- badges: end -->
 
 The R-Package RDM (rearranged dependence measures) computes the directed dependence between random variables $X$ and $Y$ building upon classical dependence measures such as Spearman's $\rho$, Kendall's $\tau$ or even measures of complete dependence such as Dette-Siburg-Stoimenov's $r$ and Chatterjee's $\xi$.
