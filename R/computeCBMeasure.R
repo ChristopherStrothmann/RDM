@@ -12,13 +12,13 @@
 #'  \item{"zeta1"}{ Implements the \eqn{\zeta_1}-measure of complete dependence established by W. Trutschnig <doi:10.1016/j.jmaa.2011.06.013>.}
 #' }
 #' @param A A (possibly non-square) doubly stochastic matrix (not necessarily sorted)
-#' @param method Determines the underlying dependence measure. Options include "spearman", "kendall", "bkr", "dss", chatterjee" and "zeta1".
+#' @param method Determines the underlying dependence measure. Options include "spearman", "kendall", "bkr", "dss", "chatterjee" and "zeta1".
 #' @return The value of \eqn{\mu(C_n(A))}. For a sorted A, this corresponds to the rearranged dependence measure \eqn{R_{\mu}(C_n(A))}.
 #' @export computeCBMeasure
 #' @importFrom Rfast "colCumSums"
 #' @examples
 #' n <- 10
-#' A <- diag(n)
+#' A <- diag(n)/n
 #' computeCBMeasure(A, method="spearman")
 
 computeCBMeasure <- function(A, method = c("spearman", "kendall", "bkr", "dss", "zeta1")) {
