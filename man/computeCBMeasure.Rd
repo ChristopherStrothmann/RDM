@@ -9,7 +9,7 @@ computeCBMeasure(A, method = c("spearman", "kendall", "bkr", "dss", "zeta1"))
 \arguments{
 \item{A}{A (possibly non-square) doubly stochastic matrix (not necessarily sorted)}
 
-\item{method}{Determines the underlying dependence measure. Options include "spearman", "kendall", "bkr", "dss", chatterjee" and "zeta1".}
+\item{method}{Determines the underlying dependence measure. Options include "spearman", "kendall", "bkr", "dss", "chatterjee" and "zeta1".}
 }
 \value{
 The value of \eqn{\mu(C_n(A))}. For a sorted A, this corresponds to the rearranged dependence measure \eqn{R_{\mu}(C_n(A))}.
@@ -32,6 +32,6 @@ Currently, the following underlying measures are implemented:
 }
 \examples{
 n <- 10
-A <- diag(n)
+A <- diag(n)/n
 computeCBMeasure(A, method="spearman")
 }

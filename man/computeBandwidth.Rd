@@ -18,7 +18,7 @@ computeBandwidth(X, sL, sU, method = c("cvsym", "cvasym"), reduce = TRUE)
 \item{reduce}{In case reduce is set to TRUE, the parameter is choosen from N, N+2, ... instead of N, N+1, N+2, ...}
 }
 \value{
-The choosen bandwidth depending on the dataframe X.
+The choosen bandwidth depending on the data.frame X.
 }
 \description{
 An implementation of the cross-validation principle for the bandwidth selection as presented in Strothmann, Dette and Siburg (2022) <arXiv:2201.03329>.
@@ -27,9 +27,9 @@ An implementation of the cross-validation principle for the bandwidth selection 
 This function computes the optimal bandwidth given the bivariate observations \eqn{X} of length \eqn{N}.
 Currently, there are two different algorithms implemented:
 \itemize{
-  \item{"cvsym"}{Computes the optimal bandwidth choice for a square checkerboard mass density according to the cross-validation principle. The bandwidth is a natural number between \eqn{N^{sL}, ..., N^{sU}}}
-  \item{"cvasym"}{Computes the optimal bandwidth choice \eqn{(N_1, N_2)} for a non-square checkerboard mass density according to the cross-validation principle.
-  The bandwidths \eqn{N_1, N_2} are natural numbers between \eqn{N^{sL}, ..., N^{sU}} and may possibly attain different values.}
+  \item "cvsym" - Computes the optimal bandwidth choice for a square checkerboard mass density according to the cross-validation principle. The bandwidth is a natural number between \eqn{N^{sL}, ..., N^{sU}}
+  \item "cvasym" - Computes the optimal bandwidth choice \eqn{(N_1, N_2)} for a non-square checkerboard mass density according to the cross-validation principle.
+  The bandwidths \eqn{N_1, N_2} are natural numbers between \eqn{N^{sL}, ..., N^{sU}} and may possibly attain different values.
 }
 }
 \examples{

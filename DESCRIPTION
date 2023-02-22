@@ -1,7 +1,7 @@
 Package: RDM
 Type: Package
-Title: Quantify dependence using rearranged dependence measures 
-Version: 0.1.0
+Title: Quantify Dependence using Rearranged Dependence Measures 
+Version: 0.1.1
 Authors@R: 
   c(person( given = "Holger", 
             family = "Dette", 
@@ -19,7 +19,7 @@ Authors@R:
             family = "",
             role = c("cph"),
             comment = "Authors of the modified code.cpp of the R-package 'qad' listed in inst/qad-authors.txt"))
-Description: Estimates the rearranged dependence measure (rdm) of two continuous random variables for different underlying measures. 
+Description: Estimates the rearranged dependence measure ('RDM') of two continuous random variables for different underlying measures. 
   Furthermore, it provides a method to estimate the (SI)-rearrangement copula using empirical checkerboard copulas.
   It is based on the theoretical results presented in Strothmann et al. (2022) <arXiv:2201.03329> and Strothmann (2021) <doi:10.17877/DE290R-22733>.
 URL: https://github.com/ChristopherStrothmann/RDM

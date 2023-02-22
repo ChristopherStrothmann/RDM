@@ -4,3 +4,4 @@
 references.bib
 ^LICENSE\.md$
 ^\.github$
+^cran-comments\.md$

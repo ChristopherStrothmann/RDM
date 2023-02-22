@@ -3,22 +3,22 @@
 #' @details This function computes the optimal bandwidth given the bivariate observations \eqn{X} of length \eqn{N}.
 #' Currently, there are two different algorithms implemented:
 #' \itemize{
-#'   \item{"cvsym"}{Computes the optimal bandwidth choice for a square checkerboard mass density according to the cross-validation principle. The bandwidth is a natural number between \eqn{N^{sL}, ..., N^{sU}}}
-#'   \item{"cvasym"}{Computes the optimal bandwidth choice \eqn{(N_1, N_2)} for a non-square checkerboard mass density according to the cross-validation principle.
-#'   The bandwidths \eqn{N_1, N_2} are natural numbers between \eqn{N^{sL}, ..., N^{sU}} and may possibly attain different values.}
+#'   \item "cvsym" - Computes the optimal bandwidth choice for a square checkerboard mass density according to the cross-validation principle. The bandwidth is a natural number between \eqn{N^{sL}, ..., N^{sU}}
+#'   \item "cvasym" - Computes the optimal bandwidth choice \eqn{(N_1, N_2)} for a non-square checkerboard mass density according to the cross-validation principle.
+#'   The bandwidths \eqn{N_1, N_2} are natural numbers between \eqn{N^{sL}, ..., N^{sU}} and may possibly attain different values.
 #' }
 #' @param X A bivariate data.frame containing the observations. Each row contains one observation.
 #' @param sL Lower bound \eqn{N^{sL}} for the possible bandwidth parameters.
 #' @param sU Upper bound \eqn{N^{sU}} for the possible bandwidth parameters .
 #' @param method "cvsym" uses either a symmetric cross-validation principle (N_1 = N_2) and "cvasym" uses an asymmetric cross-validation principle (i.e. \eqn{N_1} and \eqn{N_2} may attain different values).
 #' @param reduce In case reduce is set to TRUE, the parameter is choosen from N, N+2, ... instead of N, N+1, N+2, ...
-#' @return The choosen bandwidth depending on the dataframe X.
+#' @return The choosen bandwidth depending on the data.frame X.
 #' @export computeBandwidth
 #' @examples
 #' n <- 20
 #' X <- cbind(runif(n), runif(n))
 #' computeBandwidth(X, sL = 0.25, sU = 0.5, method="cvsym", reduce=TRUE)
-computeBandwidth <- function(X, sL, sU, method=c("cvsym", "cvasym"), reduce=TRUE) {
+computeBandwidth <- function(X, sL, sU, method = c("cvsym", "cvasym"), reduce=TRUE) {
   type <- match.arg(method, c("cvsym", "cvasym"))
 
   if(type == "cvsym") {

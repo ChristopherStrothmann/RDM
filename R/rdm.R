@@ -15,7 +15,7 @@
 #' The estimation of the checkerboard mass density \eqn{A} depends on the choice of the bandwidth for the checkerboard copula.
 #' For a detailed discussion of "cv" and "cvsym", see \code{\link{computeBandwidth}}.
 #' @param X A bivariate data.frame containing the observations. Each row contains one bivariate observation.
-#' @param method Options include "spearman", "kendall", "bkr", "dss", chatterjee" and "zeta1".The option "all" returns the value for all aforementioned methods.
+#' @param method Options include "spearman", "kendall", "bkr", "dss", "chatterjee" and "zeta1".The option "all" returns the value for all aforementioned methods.
 #' @param bandwidth_method A character string indicating the use of either a cross-validation principle (square or non-square) or a fixed bandwidth (oftentimes called resolution).
 #' @param bandwidth_parameter A numerical vector which contains the necessary optional parameters for the exponent of the chosen bandwidth method.
 #' In case of N observerations, the bandwidth_parameter \eqn{(s_1, s_2)} determines a lower bound \eqn{N^{s_1}} and upper bound \eqn{N^{s_2}} for the cross-validation methods
@@ -28,7 +28,7 @@
 #' @examples
 #' n <- 50
 #' X <- cbind(runif(n), runif(n))
-#' rdm(X, method="spearman", bandwidth_method="fixed", bandwidth_parameter=.5)
+#' rdm(X, method="spearman", bandwidth_method="fixed", bandwidth_parameter=.3)
 #' n <- 20
 #' U <- runif(n)
 #' rdm(cbind(U, U), method="spearman", bandwidth_method="cv", bandwidth_parameter=c(0.25, 0.5))
