@@ -7,20 +7,20 @@
 checkerboardDensityIndex(X, Y, k, l, resolution1, resolution2)
 }
 \arguments{
-\item{X}{First coordinate of the observation.}
+\item{X}{First coordinate of the observations.}
 
-\item{Y}{Second coordinate of the observation.}
+\item{Y}{Second coordinate of the observations.}
 
 \item{k}{Index of the first component.}
 
 \item{l}{Index of the second component.}
 
-\item{resolution1}{Resolution in the first component.}
+\item{resolution1}{A natural number specifying the resolution of the first component.}
 
-\item{resolution2}{Resolution in the second component.}
+\item{resolution2}{A natural number specifying the resolution of the second component.}
 }
 \value{
-The estimated checkerboard mass density A_kl
+The estimated checkerboard mass density \eqn{A_{kl}}.
 }
 \description{
 Estimate the value \eqn{A_{kl}} of the non-square checkerboard mass density.
@@ -31,5 +31,8 @@ to allow for the evaluation of a single index of the non-square checkerboard mas
 For more details on the implementation see \code{\link[qad]{ECBC}} and for more information on the implemented changes, see the file 'src/code.cpp'.
 }
 \examples{
-checkerboardDensityIndex(runif(20), runif(20), 1, 2, 0.5, 0.5)
+U <- runif(20)
+V <- runif(20)
+checkerboardDensity(U, V, 3, 3)
+checkerboardDensityIndex(U, V, 1, 2, 3, 3)
 }

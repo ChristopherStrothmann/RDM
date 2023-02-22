@@ -8,11 +8,11 @@
 #'   The bandwidths \eqn{N_1, N_2} are natural numbers between \eqn{N^{sL}, ..., N^{sU}} and may possibly attain different values.
 #' }
 #' @param X A bivariate data.frame containing the observations. Each row contains one observation.
-#' @param sL Lower bound \eqn{N^{sL}} for the possible bandwidth parameters.
-#' @param sU Upper bound \eqn{N^{sU}} for the possible bandwidth parameters .
+#' @param sL Lower bound \eqn{N^{sL}} for the possible bandwidth parameters (where \eqn{N} is the number of observations).
+#' @param sU Upper bound \eqn{N^{sU}} for the possible bandwidth parameters (where \eqn{N} is the number of observations).
 #' @param method "cvsym" uses either a symmetric cross-validation principle (N_1 = N_2) and "cvasym" uses an asymmetric cross-validation principle (i.e. \eqn{N_1} and \eqn{N_2} may attain different values).
-#' @param reduce In case reduce is set to TRUE, the parameter is choosen from N, N+2, ... instead of N, N+1, N+2, ...
-#' @return The choosen bandwidth depending on the data.frame X.
+#' @param reduce In case reduce is set to TRUE, the parameter is chosen from N, N+2, ... instead of N, N+1, N+2, ...
+#' @return The chosen bandwidth depending on the data.frame X.
 #' @export computeBandwidth
 #' @examples
 #' n <- 20

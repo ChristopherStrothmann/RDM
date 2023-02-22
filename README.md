@@ -94,8 +94,8 @@ results$zeta1
 
 Please note that the choice of bandwidth $s \in (0, 0.5)$ is crucial for
 the speed of convergence towards the true value $R_\mu(X, Y)$. Generally
-speaking, smaller values of $s$ are more advantageous in case of ‘almost
-independent’ random variables $X$ and $Y$, whereas larger values of $s$
+speaking, smaller values of $s$ are more advantageous in case of "almost
+independent" random variables $X$ and $Y$, whereas larger values of $s$
 improve the convergence rate for dependent random variables $X$ and $Y$.
 The RDM-Package provides a cross-validation approach for the bandwidth
 choice:

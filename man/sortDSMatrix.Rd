@@ -7,19 +7,21 @@
 sortDSMatrix(A)
 }
 \arguments{
-\item{A}{A (possibly non-square) doubly stochastic matrix}
+\item{A}{A (possibly non-square) doubly stochastic matrix or (possibly non-square) checkerboard mass density.}
 }
 \value{
-The sorted version \eqn{A^\uparrow} of the doubly stochastic matrix \eqn{A}.
+The sorted version \eqn{A^\uparrow} of the matrix \eqn{A}.
 }
 \description{
 Sorts an arbitrary doubly stochastic \eqn{N_1 \times N_2} matrix A into the matrix \eqn{A^\uparrow} such that the induced checkerboard copula \eqn{C(A^\uparrow)} is stochastically increasing.
 }
 \details{
 The algorithm to sort a doubly stochastic matrix \eqn{A} is given in Strothmann, Dette and Siburg (2022) <arXiv:2201.03329>.
+Since this implementation does not depend on the appropriate scaling of the matrix \eqn{A}, both doubly stochastic matrices and checkerboard mass densities are admissible inputs.
 }
 \examples{
-n <- 10
+n <- 4
 A <- diag(n)[n:1, ]
+print(A)
 sortDSMatrix(A)
 }

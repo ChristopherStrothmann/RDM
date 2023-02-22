@@ -7,19 +7,19 @@
 checkerboardDensity(X, Y, resolution1, resolution2)
 }
 \arguments{
-\item{X}{First coordinate of the observation.}
+\item{X}{First coordinate of the observations.}
 
-\item{Y}{Second coordinate of the observation.}
+\item{Y}{Second coordinate of the observations.}
 
-\item{resolution1}{Resolution in the first component.}
+\item{resolution1}{A natural number specifying the resolution of the first component.}
 
-\item{resolution2}{Resolution in the second component.}
+\item{resolution2}{A natural number specifying the resolution of the second component.}
 }
 \value{
-The estimated checkerboard mass density
+The estimated checkerboard mass density.
 }
 \description{
-Estimate an non-square checkerboard mass density
+Estimate a non-square checkerboard mass density
 }
 \details{
 This implementation modifies the code of build_checkerboard_weights() published in 'qad', version 1.0.4, available at \href{https://CRAN.R-project.org/package=qad}{https://CRAN.R-project.org/package=qad},
@@ -27,5 +27,5 @@ to allow for non-square checkerboard mass densities.
 For more details on the implementation see \code{\link[qad]{ECBC}} and for more information on the implemented changes, see the file 'src/code.cpp'.
 }
 \examples{
-checkerboardDensity(runif(20), runif(20), 0.5, 0.5)
+checkerboardDensity(runif(20), runif(20), 3, 3)
 }

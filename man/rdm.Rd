@@ -24,7 +24,7 @@ rdm(
 \item{bandwidth_parameter}{A numerical vector which contains the necessary optional parameters for the exponent of the chosen bandwidth method.
 In case of N observerations, the bandwidth_parameter \eqn{(s_1, s_2)} determines a lower bound \eqn{N^{s_1}} and upper bound \eqn{N^{s_2}} for the cross-validation methods
 or a single number s for the fixed bandwidth method resulting in \eqn{N^s}.
-The parameters have to lie in \eqn{(0, 1/2)} and fulfill \eqn{s_1 < s_2}.}
+The parameters have to lie in \eqn{(0, 1/2)} and fulfil \eqn{s_1 < s_2}.}
 
 \item{permutation}{Whether or not to perform a permutation test}
 
@@ -36,13 +36,17 @@ The parameters have to lie in \eqn{(0, 1/2)} and fulfill \eqn{s_1 < s_2}.}
 The estimated value of the rearranged dependence measure
 }
 \description{
-This function estimates the (asymmetric) dependence of Y on X using the rearranged dependence measure \eqn{R_\mu(X, Y)} for different possible underlying measures \eqn{\mu}.
+This function estimates the asymmetric dependence between \eqn{X} and \eqn{Y} using the rearranged dependence measure \eqn{R_\mu(X, Y)} for different possible underlying measures \eqn{\mu}.
+A value of 0 characterizes independence of \eqn{X} and \eqn{Y}, while a value of 1 characterizes a functional relationship between \eqn{X} and \eqn{Y}, i.e. \eqn{Y = f(X)}.
 }
 \details{
 This function estimates \eqn{R_\mu(X, Y)} using the empirical checkerboard mass density \eqn{A}.
 To arrive at \eqn{R_\mu(X, Y)}, \eqn{A} is appropriately sorted and then evaluated for the underlying measure.
-The estimated \eqn{R_\mu} always takes values between 0 and 1, where a theoretical value \eqn{R_\mu(X, Y) = 0} implies independence of \eqn{X} and \eqn{Y}, while a theoretical value \eqn{R_\mu(X, Y) = 1} implies the existence of some measurable function f such that
-\eqn{Y = f(X)}.
+The estimated \eqn{R_\mu} always takes values between 0 and 1 with
+\itemize{
+ \item \eqn{R_\mu(X, Y) = 0} if and only if \eqn{X} and \eqn{Y} are independent.
+ \item \eqn{R_\mu(X, Y) = 1} if and only if \eqn{Y = f(X)} for some measurable function \eqn{f}.
+}
 Currently, the following underlying measures are implemented:
 \itemize{
  \item{"spearman"}{ Implements the concordance measure Spearman's \eqn{\rho} (which is identical to the \eqn{L_1}-Schweizer-Wolff-measure),}

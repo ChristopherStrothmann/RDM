@@ -1,8 +1,8 @@
 #' @title Dependence measures for the checkerboard copula
-#' @description Computes \eqn{\mu(C_n(A))} for some underlying measure for the checkerboard copula \eqn{C_n(A)}.
+#' @description Computes \eqn{\mu(C^{\#}(A))} for some underlying measure for the checkerboard copula \eqn{C^{\#}(A)}.
 #' This measure depends only on the input matrix A.
-#' @details This function computes \eqn{\mu(C_n(A))} for one of several underlying measures for a given checkerboard copula \eqn{C_n(A)}.
-#' Most importantly, the value only depends on the (possibly non-square) matrix \eqn{A} and implicitly assumes the form of \eqn{C_n(A)} given in Strothmann, Dette and Siburg (2022) <arXiv:2201.03329>.
+#' @details This function computes \eqn{\mu(C^{\#}(A))} for one of several underlying measures for a given checkerboard copula \eqn{C^{\#}(A)}.
+#' Most importantly, the value only depends on the (possibly non-square) matrix \eqn{A} and implicitly assumes the form of \eqn{C^{\#}(A)} given in Strothmann, Dette and Siburg (2022) <arXiv:2201.03329>.
 #' Currently, the following underlying measures are implemented:
 #' \itemize{
 #'  \item{"spearman"}{ Implements the concordance measure Spearman's \eqn{\rho},}
@@ -11,9 +11,9 @@
 #'  \item{"dss"}{ Implements the Dette-Siburg-Stoimenov measure of complete dependence <doi:10.1111/j.1467-9469.2011.00767.x>, also known as Chatterjee's \eqn{\xi} <doi:10.1080/01621459.2020.1758115>,}
 #'  \item{"zeta1"}{ Implements the \eqn{\zeta_1}-measure of complete dependence established by W. Trutschnig <doi:10.1016/j.jmaa.2011.06.013>.}
 #' }
-#' @param A A (possibly non-square) doubly stochastic matrix (not necessarily sorted)
+#' @param A A (possibly non-square) checkerboard mass density.
 #' @param method Determines the underlying dependence measure. Options include "spearman", "kendall", "bkr", "dss", "chatterjee" and "zeta1".
-#' @return The value of \eqn{\mu(C_n(A))}. For a sorted A, this corresponds to the rearranged dependence measure \eqn{R_{\mu}(C_n(A))}.
+#' @return The value of \eqn{\mu(C^{\#}(A))}. For a sorted A, this corresponds to the rearranged dependence measure \eqn{R_{\mu}(C^{\#}(A))}.
 #' @export computeCBMeasure
 #' @importFrom Rfast "colCumSums"
 #' @examples

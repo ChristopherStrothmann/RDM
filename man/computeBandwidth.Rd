@@ -9,16 +9,16 @@ computeBandwidth(X, sL, sU, method = c("cvsym", "cvasym"), reduce = TRUE)
 \arguments{
 \item{X}{A bivariate data.frame containing the observations. Each row contains one observation.}
 
-\item{sL}{Lower bound \eqn{N^{sL}} for the possible bandwidth parameters.}
+\item{sL}{Lower bound \eqn{N^{sL}} for the possible bandwidth parameters (where \eqn{N} is the number of observations).}
 
-\item{sU}{Upper bound \eqn{N^{sU}} for the possible bandwidth parameters .}
+\item{sU}{Upper bound \eqn{N^{sU}} for the possible bandwidth parameters (where \eqn{N} is the number of observations).}
 
 \item{method}{"cvsym" uses either a symmetric cross-validation principle (N_1 = N_2) and "cvasym" uses an asymmetric cross-validation principle (i.e. \eqn{N_1} and \eqn{N_2} may attain different values).}
 
-\item{reduce}{In case reduce is set to TRUE, the parameter is choosen from N, N+2, ... instead of N, N+1, N+2, ...}
+\item{reduce}{In case reduce is set to TRUE, the parameter is chosen from N, N+2, ... instead of N, N+1, N+2, ...}
 }
 \value{
-The choosen bandwidth depending on the data.frame X.
+The chosen bandwidth depending on the data.frame X.
 }
 \description{
 An implementation of the cross-validation principle for the bandwidth selection as presented in Strothmann, Dette and Siburg (2022) <arXiv:2201.03329>.
