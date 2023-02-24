@@ -22,7 +22,7 @@
 #' @param method Options include "spearman", "kendall", "bkr", "dss", "chatterjee" and "zeta1".The option "all" returns the value for all aforementioned methods.
 #' @param bandwidth_method A character string indicating the use of either a cross-validation principle (square or non-square) or a fixed bandwidth (oftentimes called resolution).
 #' @param bandwidth_parameter A numerical vector which contains the necessary optional parameters for the exponent of the chosen bandwidth method.
-#' In case of N observerations, the bandwidth_parameter \eqn{(s_1, s_2)} determines a lower bound \eqn{N^{s_1}} and upper bound \eqn{N^{s_2}} for the cross-validation methods
+#' In case of N observations, the bandwidth_parameter \eqn{(s_1, s_2)} determines a lower bound \eqn{N^{s_1}} and upper bound \eqn{N^{s_2}} for the cross-validation methods
 #' or a single number s for the fixed bandwidth method resulting in \eqn{N^s}.
 #' The parameters have to lie in \eqn{(0, 1/2)} and fulfil \eqn{s_1 < s_2}.
 #' @param permutation Whether or not to perform a permutation test
