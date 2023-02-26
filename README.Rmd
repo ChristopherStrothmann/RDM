@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 
+[![CRAN status](https://www.r-pkg.org/badges/version/RDM)](https://CRAN.R-project.org/package=RDM)
 [![R-CMD-check](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
@@ -38,9 +39,15 @@ For more information on the theoretical properties of $R_\mu$ and a discussion o
 
 ## Installation
 
+RDM can be installed via:
+
+```{r cran, eval=FALSE, echo = TRUE}
+install.packages("RDM")
+```
+
 You can install the development version of RDM via:
 
-```{r, eval=FALSE, echo = TRUE}
+```{r github, eval=FALSE, echo = TRUE}
 # install devtools package
 if (!requireNamespace("devtools", quietly = TRUE)) {
   install.packages("devtools")

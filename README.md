@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![CRAN
+status](https://www.r-pkg.org/badges/version/RDM)](https://CRAN.R-project.org/package=RDM)
 [![R-CMD-check](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ChristopherStrothmann/RDM/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
@@ -35,6 +37,12 @@ discussion of the employed estimator $\widehat{R}_\mu$, see Strothmann,
 Dette, and Siburg (2022) and Strothmann (2021).
 
 ## Installation
+
+RDM can be installed via:
+
+``` r
+install.packages("RDM")
+```
 
 You can install the development version of RDM via:
 
@@ -67,35 +75,35 @@ plot(X, xlab="X", ylab="f(X)")
 #Computes R_mu(X, Y) using Spearman's rho as the underlying measure 
 #and a fixed bandwidth 500^(0.5) of the underlying copula estimator
 rdm(X, method="spearman", bandwidth_method="fixed", bandwidth_parameter = 0.5)
-#> [1] 0.9811719
+#> [1] 0.9800781
 
 #Comparison to the Spearman's rho
 cor(X[, 1], X[, 2], method="spearman")
-#> [1] -0.3248678
+#> [1] -0.3706208
 
 #Computes R_mu(X, Y) using all implemented underlying measures
 results <- rdm(X, method="all", bandwidth_method="fixed", bandwidth_parameter = 0.5)
 #Value for Spearman's rho
 results$spearman
-#> [1] 0.9811719
+#> [1] 0.9800781
 #Value for Kendall's tau
 results$kendall
-#> [1] 0.8719117
+#> [1] 0.8680452
 #Value for Blum-Kiefer-Rosenblatt R (or Schweizer-Wolff sigma_2)
 results$bkr
-#> [1] 0.9768168
+#> [1] 0.9761073
 #Value for Dette-Siburg-Stoimenov r (or Chatterjee's xi)
 results$dss
-#> [1] 0.8237094
+#> [1] 0.8234614
 #Value for Trutschnig's zeta_1
 results$zeta1
-#> [1] 0.9039916
+#> [1] 0.9031374
 ```
 
 Please note that the choice of bandwidth $s \in (0, 0.5)$ is crucial for
 the speed of convergence towards the true value $R_\mu(X, Y)$. Generally
-speaking, smaller values of $s$ are more advantageous in case of "almost
-independent" random variables $X$ and $Y$, whereas larger values of $s$
+speaking, smaller values of $s$ are more advantageous in case of ‘almost
+independent’ random variables $X$ and $Y$, whereas larger values of $s$
 improve the convergence rate for dependent random variables $X$ and $Y$.
 The RDM-Package provides a cross-validation approach for the bandwidth
 choice:
@@ -109,7 +117,7 @@ X <- cbind(x1, 0.5*sin(4*pi*x1)+0.5)
 
 #Use a cross-validation principle to determine appropriate bandwidth choices
 rdm(X, method="spearman", bandwidth_method="cv", bandwidth_parameter = c(0.25, 0.5))
-#> [1] 0.975702
+#> [1] 0.9738499
 ```
 
 ## References
